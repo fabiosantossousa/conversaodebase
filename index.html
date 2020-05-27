@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conversor de Base</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+
+</head>
+<body>
+	<header id="cabecalho">
+		<h1>Conversão de Base</h1>
+	</header>
+     
+     <!-- Conteúdo do site  -->
+	<section id="conteudo">
+	
+		<p><b>     Bem vindo ao conversor de Base. Digite uma temperatura e descubra qual será nas outras medidas. </p>
+
+     <table>
+			<tr>
+				<td>Binario</td>
+				<td><input type="" id="binario"></td>
+			</tr>
+			<tr>
+				<td>Octal</td>
+				<td><input type="" id="octal"></td>
+			</tr>
+			<tr>
+				<td>Decimal</td>
+				<td><input type="" id="decimal"></td>
+			</tr>
+			<tr>
+				<td>Hexadecimal</td>
+				<td><input type="" id="hexadecimal"></td>
+			</tr>
+		</table>
+		<button id="converter">Converter</button>
+		<button id="limpar">Limpar</button>
+       <script type="text/javascript">
+		var botao = document.getElementById('converter');
+		botao.onclick = function(){
+			var binario = document.getElementById('binario').value;
+			var octal = document.getElementById('octal').value;
+			var decimal = document.getElementById('decimal').value;
+			var hexadecimal = document.getElementById('hexadecimal').value;
+			if(binario!=="" ){
+				document.getElementById('octal').value = parseInt(binario, 2).toString(8);
+				document.getElementById('decimal').value =parseInt(binario, 2);
+				document.getElementById('hexadecimal').value =parseInt(binario, 2).toString(16);
+			}else if (octal!==""){
+				document.getElementById('binario').value = parseInt(octal, 8).toString(2);
+				document.getElementById('decimal').value = parseInt(octal, 8);
+				document.getElementById('hexadecimal').value = parseInt(octal, 8).toString(16);
+			}else if(decimal!==""){
+				document.getElementById('binario').value = (+decimal).toString(2);
+				document.getElementById('octal').value = (+decimal).toString(8);
+				document.getElementById('hexadecimal').value = (+decimal).toString(16);
+			}else if(hexadecimal!==""){
+				document.getElementById('binario').value = parseInt(hexadecimal, 16).toString(2);
+				document.getElementById('octal').value = parseInt(hexadecimal, 16).toString(8);
+				document.getElementById('decimal').value = parseInt(hexadecimal, 16);
+			}
+		}
+		var limpar = document.getElementById('limpar');
+		limpar.onclick = function(){
+			document.getElementById('binario').value = "";
+			document.getElementById('octal').value = "";
+			document.getElementById('decimal').value = "";
+			document.getElementById('hexadecimal').value = "";
+		}
+	</script>
+
+    <!-- Rodapé do site -->
+	<footer id="rodape">
+		<h3>Contato</h3>
+		<address>E-mail: <a href="mailto:fabiodosantosdesousa@gmail.com">Fábio dos Santos de Sousa</a></address>
+		<address>Fone: <a href="tel:+63 99223-5803">(63) 9 9223-5803</a></address>
+		<address>Social: <a href="http://instagram.com/fabiodosantosdesousa">@fabiodosantosdesousaa</a></address>
+	</footer>
+		
+    
+</body>
+</html>
